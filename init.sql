@@ -1,0 +1,1 @@
+SELECT 'CREATE DATABASE crypto' WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'crypto')\gexec
