@@ -16,6 +16,7 @@ def main():
     CORS(app, resources={r"/*": {"origins": "*"}})
     routes = Router(app, conn.conn)
     routes.run()
+    
 
 
 if __name__ == "__main__":

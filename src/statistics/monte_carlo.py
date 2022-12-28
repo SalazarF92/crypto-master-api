@@ -8,6 +8,7 @@ from datetime import datetime, time
 
 
 def monte_carlo(url):
+    print('startei mano')
 
     extreme_values = []
 
@@ -156,3 +157,7 @@ def monte_carlo(url):
 
 
     return {'extreme': extreme_values, 'start': start_moment, 'end': end_moment, 'next': next_moment}
+
+
+
+monte_carlo('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=12&page=1&sparkline=false')

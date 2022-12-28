@@ -10,6 +10,14 @@ class UserRepositoryDB (UserRepository):
     def get_by_id(self, user_id):
         return 'oi'
         # return self.conn.query(User).filter(User.id == user_id).first()
+        
+    def get_users(self):
+        query = 'SELECT * FROM users'
+        self.cursor.execute(query)
+        result = self.cursor.fetchall()
+        return result
+        
+    
 
     def create(self, username, password):
         ## generate id automatic
