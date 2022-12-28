@@ -12,7 +12,8 @@ Statics General Cryptocoins - API (EM DESENVOLVIMENTO)
 
 Descrição
 
-  API que consiste inicialmente em obter os dados de Monte Carlo da lista das principais criptomoedas tomando base a listagem da Coingecko, além do cálculo de sentimentos positivos e negativos das mesmas criptos com base na plataforma Reddit
+  API que consiste inicialmente em obter os dados de Monte Carlo da lista das principais criptomoedas tomando base a listagem da Coingecko, além do cálculo de sentimentos positivos e negativos das mesmas criptos com base na plataforma Reddit.
+  
   Para o cálculo propriemente dito dos serviços de Monte Carlo e Sentimentos do Reddit, deixei em uma API a parte.  
 
 **Background in:** Python, Flask
