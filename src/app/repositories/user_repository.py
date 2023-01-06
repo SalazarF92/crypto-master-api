@@ -10,7 +10,11 @@ class UserRepository(ABC):
     @abstractmethod
     def get_by_id(self, username):
         pass
-
+    
+    @abstractmethod
+    def get_me(self, username, withPassword=False):
+        pass
+    
     @abstractmethod
     def update(self, user):
         pass
@@ -18,3 +22,5 @@ class UserRepository(ABC):
     @abstractmethod
     def delete(self, username):
         pass
+    
+    

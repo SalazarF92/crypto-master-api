@@ -2,29 +2,40 @@
 from src.app.repositories.user_repository import UserRepository
 
 
-class UserRepositoryDB (UserRepository):
+class UserRepositoryDB(UserRepository):
     def __init__(self, conn):
         self.conn = conn
         self.cursor = conn.cursor()
 
     def get_by_id(self, user_id):
-        return 'oi'
+        return "oi"
         # return self.conn.query(User).filter(User.id == user_id).first()
-        
+
     def get_users(self):
-        query = 'SELECT * FROM users'
+        query = "SELECT * FROM users"
         self.cursor.execute(query)
         result = self.cursor.fetchall()
         return result
-        
-    
+
+    def get_me(self, username, withPassword):
+        print(username, withPassword)
+        if withPassword:
+            query = "SELECT * FROM users WHERE username = %s"
+            self.cursor.execute(query, (str(username),))
+            result = self.cursor.fetchone()
+            return result
+
+        query = "SELECT id, username FROM users WHERE username = %s "
+        self.cursor.execute(query, (username,))
+        result = self.cursor.fetchone()
+        return result
 
     def create(self, username, password):
         ## generate id automatic
-        query = 'INSERT INTO users (username, password) VALUES (%s, %s)'
+        query = "INSERT INTO users (username, password) VALUES (%s, %s)"
         user = self.cursor.execute(query, (username, password))
         self.conn.commit()
-        return user['id']
+        return user["id"]
 
     def update(self, user):
         self.conn.merge(user)
