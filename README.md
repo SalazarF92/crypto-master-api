@@ -13,6 +13,8 @@ Description
 
 This API is a financial tool that allows users to perform Monte Carlo simulations on the main cryptocurrencies using data from Coingecko.  Designed to provide users with valuable insights into the potential performance of different cryptocurrencies over time.
 
+I'm working to decouple the architeture, making use of abstract classes to separate the different components and make the code more modular and maintainable. This allows for easy updates and expansion of the API in the future.
+
 To procceed with the information available as statistics, a CRUD to user was provided, allowing new users to login and access the current data. Additionally, I provided a capability to calculate sentiments from the cryptocurrency market based on Reddit forum posts, returning results as either positive or negative.
 
 To perform the Monte Carlo calculations, a separate service has been created and can be accessed through the link provided in Links section. This service contains all the necessary statistics and data to make some predictions about the cryptocurrency market situation.
