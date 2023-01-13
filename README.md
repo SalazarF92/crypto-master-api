@@ -1,4 +1,4 @@
-Statics General Cryptocoins - API (Development)
+Statics General Cryptocurrenties - API (Development)
 
 [![author](https://img.shields.io/badge/author-FlavioSalazar-red.svg)](https://www.linkedin.com/in/flavio-r-salazar) [![](https://img.shields.io/badge/python-blue.svg)](https://www.python.org/downloads/release/python-370/) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/salazarf92/crypto-master-api/issues)
 
@@ -21,7 +21,7 @@ To perform the Monte Carlo calculations, a separate service has been created and
 
 **Links:**
 * [LinkedIn](https://www.linkedin.com/in/flavio-r-salazar)
-* [API de cálculos](https://github.com/SalazarF92/crypto-statistics-api)
+* [Statistics Calc](https://github.com/SalazarF92/crypto-statistics-api)
 
 
 
