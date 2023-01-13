@@ -1,5 +1,4 @@
-# crypto-master-api
-Statics General Cryptocoins - API (EM DESENVOLVIMENTO)
+Statics General Cryptocoins - API (Development)
 
 [![author](https://img.shields.io/badge/author-FlavioSalazar-red.svg)](https://www.linkedin.com/in/flavio-r-salazar) [![](https://img.shields.io/badge/python-blue.svg)](https://www.python.org/downloads/release/python-370/) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/salazarf92/crypto-master-api/issues)
 
@@ -10,11 +9,13 @@ Statics General Cryptocoins - API (EM DESENVOLVIMENTO)
 # Flavio Salazar
 <sub>*Full Stack Developer*</sub>
 
-Descrição
+Description
 
-  API que consiste inicialmente em obter os dados de Monte Carlo da lista das principais criptomoedas tomando base a listagem da Coingecko, além do cálculo de sentimentos positivos e negativos das mesmas criptos com base na plataforma Reddit.
-  
-  Para o cálculo propriemente dito dos serviços de Monte Carlo e Sentimentos do Reddit, deixei em uma API a parte.  
+This API is a financial tool that allows users to perform Monte Carlo simulations on the main cryptocurrencies using data from Coingecko.  Designed to provide users with valuable insights into the potential performance of different cryptocurrencies over time.
+
+To procceed with the information available as statistics, a CRUD to user was provided, allowing new users to login and access the current data. Additionally, I provided a capability to calculate sentiments from the cryptocurrency market based on Reddit forum posts, returning results as either positive or negative.
+
+To perform the Monte Carlo calculations, a separate service has been created and can be accessed through the link provided in Links section. This service contains all the necessary statistics and data to make some predictions about the cryptocurrency market situation.
 
 **Background in:** Python, Flask
 
