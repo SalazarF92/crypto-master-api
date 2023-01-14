@@ -19,13 +19,13 @@ class UserService:
         return self.user_respository.get_me(username, withPassword)
     
     def get_users(self):
-        print('to aqui')
         return self.user_respository.get_users()
     
     def login(self, username, password):
         user = self.user_respository.get_me(username, True)
         
-        ## if user is None throw error
+        
+        ## if user is None throw erro r
         if user is None:
             return 'User not found', 404
 

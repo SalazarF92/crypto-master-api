@@ -1,4 +1,4 @@
-from src.http.controllers.crypyo_controller import CryptoController
+from src.http.controllers.user_crypto_controller import UserCryptoController
 from src.http.controllers.user_controller import UserController
 
 class Router:
@@ -10,13 +10,12 @@ class Router:
     def user_controller(self, app, conn):
         UserController(app, conn)
         
-    def crypto_controller(self, app, conn):
-        CryptoController(app, conn)
-        
+    def user_crypto_controller(self, app, conn):
+        UserCryptoController(app, conn)
         
         
     def run(self):
         self.user_controller(self.app, self.conn)
-        self.crypto_controller(self.app, self.conn)
+        self.user_crypto_controller(self.app, self.conn)
         self.app.run()
         

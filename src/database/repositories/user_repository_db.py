@@ -18,7 +18,6 @@ class UserRepositoryDB(UserRepository):
         return result
 
     def get_me(self, username, withPassword):
-        print(username, withPassword)
         if withPassword:
             query = "SELECT * FROM users WHERE username = %s"
             self.cursor.execute(query, (str(username),))

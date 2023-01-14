@@ -22,7 +22,6 @@ class MCRepository:
         psql = """SELECT crypto_exchange, min_variation, max_variation FROM monte_carlo WHERE created_at >= NOW() - INTERVAL 'VALUES(%s) days';"""
         self.cursor.execute(psql, days)
         scrap = self.cursor.fetchall()
-        print(scrap)
         for row in scrap:
           t = ({'crypto_exchange': row[0], 'min_variation': float(row[1]), 'max_variation': float(row[2])})
           rowarray_list.append(t)

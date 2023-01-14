@@ -63,13 +63,20 @@ cryptos = """
         percent_change_24h VARCHAR(255) NOT NULL,
         percent_change_7d VARCHAR(255) NOT NULL,
         last_updated VARCHAR(255) NOT NULL,
-        user_id UUID REFERENCES users(id)
     );
+"""
+
+user_coin = """
+    CREATE TABLE IF NOT EXISTS user_coin (
+        id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+        coin_symbol VARCHAR(255) REFERENCES coin(symbol),
+        user_id UUID REFERENCES users(id)
+        );
 """
 
 
 def command_tables(conn):
-    create_tables = [uuid, user, cryptos]
+    create_tables = [uuid, user, user_coin]
     for create_table in create_tables:
         conn.cursor().execute(create_table)
         conn.commit()

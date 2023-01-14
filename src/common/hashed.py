@@ -1,7 +1,6 @@
 import bcrypt
 
 def calcHashedPassword(pwd):
-    print('pwd', pwd)
     bytePwd = pwd.encode('utf-8')
 
     hash = bcrypt.hashpw(bytePwd, bcrypt.gensalt())

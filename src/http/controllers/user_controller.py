@@ -17,7 +17,6 @@ class UserController:
             try :
                 username = request.json['username']
                 password = request.json['password']
-                print('ate aqui eu vim')
                 response = self.user_service.create(username, password)
                 #return a response as json response 
                 return response
