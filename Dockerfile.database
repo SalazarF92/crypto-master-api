@@ -1,6 +1,6 @@
 FROM postgres
 ENV DB_USER salazar
-ENV DB_PASSWORD salazar
-ENV DB_NAME crypto
-ENV DB_HOST localhost
+ENV PGPASSWORD salazar
+ENV PGDATABASE crypto
+ENV PGHOST localhost
 COPY init.sql /docker-entrypoint-initdb.d/

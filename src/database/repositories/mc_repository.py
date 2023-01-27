@@ -16,12 +16,12 @@ class MCRepository:
                                 float(mc['extreme'][x][1]), float(mc['extreme'][x][2])))
             self.conn.commit()
 
-    def get_interval(self):
+    def get_interval(self, days):
         rowarray_list = []
-        psql = """SELECT crypto_exchange, min_variation, max_variation FROM monte_carlo where (EXTRACT(EPOCH FROM (next_date - now()))) > -43200 """
-        self.cursor.execute(psql)
+        # "SELECT * FROM monte_carlo WHERE created_at >= NOW() - INTERVAL '60 days';"
+        psql = """SELECT crypto_exchange, min_variation, max_variation FROM monte_carlo WHERE created_at >= NOW() - INTERVAL 'VALUES(%s) days';"""
+        self.cursor.execute(psql, days)
         scrap = self.cursor.fetchall()
-        print(scrap)
         for row in scrap:
           t = ({'crypto_exchange': row[0], 'min_variation': float(row[1]), 'max_variation': float(row[2])})
           rowarray_list.append(t)

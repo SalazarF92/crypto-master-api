@@ -1,5 +1,5 @@
 from src.app.services.user_service import UserService
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import JWTManager, get_jwt_identity, jwt_required
 from flask import request
 
 class UserController:
@@ -17,7 +17,6 @@ class UserController:
             try :
                 username = request.json['username']
                 password = request.json['password']
-                print('ate aqui eu vim')
                 response = self.user_service.create(username, password)
                 #return a response as json response 
                 return response
@@ -27,3 +26,16 @@ class UserController:
         @self.app.route(f'{route}/users2', methods=["GET"])
         def get_users():
             return self.user_service.get_users()
+        
+        @self.app.route(f'{route}/login', methods=["POST"])
+        def login():
+            username = request.json['username']
+            password = request.json['password']
+            response = self.user_service.login(username, password)
+            return response
+        
+        @app.route('/protected')
+        @jwt_required()
+        def protected():
+            current_user = get_jwt_identity()
+            return f'Hello, {current_user}!'

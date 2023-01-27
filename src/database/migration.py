@@ -39,8 +39,7 @@ CREATE TABLE IF NOT EXISTS monte_carlo (
 
 
 sentiments_reddit = """
-                DROP TABLE IF EXISTS sentiments_reddit;
-                CREATE TABLE sentiments_reddit(
+               CREATE TABLE IF NOT EXISTS sentiments_reddit(
                     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
                     coin_name VARCHAR(30),
                     coin_symbol VARCHAR(30),
@@ -52,9 +51,32 @@ sentiments_reddit = """
 
         """
 
+cryptos = """
+    CREATE TABLE IF NOT EXISTS cryptos (
+        id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+        name VARCHAR(255) NOT NULL,
+        symbol VARCHAR(255) NOT NULL,
+        price VARCHAR(255) NOT NULL,
+        market_cap VARCHAR(255) NOT NULL,
+        volume_24h VARCHAR(255) NOT NULL,
+        percent_change_1h VARCHAR(255) NOT NULL,
+        percent_change_24h VARCHAR(255) NOT NULL,
+        percent_change_7d VARCHAR(255) NOT NULL,
+        last_updated VARCHAR(255) NOT NULL,
+    );
+"""
+
+user_coin = """
+    CREATE TABLE IF NOT EXISTS user_coin (
+        id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+        coin_symbol VARCHAR(255) REFERENCES coin(symbol),
+        user_id UUID REFERENCES users(id)
+        );
+"""
+
 
 def command_tables(conn):
-    create_tables = [uuid, user, monte_carlo]
+    create_tables = [uuid, user, user_coin]
     for create_table in create_tables:
         conn.cursor().execute(create_table)
         conn.commit()
